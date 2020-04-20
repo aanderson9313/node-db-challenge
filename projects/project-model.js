@@ -4,16 +4,11 @@ module.exports = {
     findAllProjects,
     findById,
     findAllTasks,
-    findAllResources,
+    findAllProjectResources,
     addProject,
     addTask,
     addResources,
-    updateProject,
-    updateTask,
-    updateResources,
-    removeProject,
-    removeTask,
-    removeResources
+    removeProject
 };
 
 async function findAllProjects() {
@@ -32,15 +27,32 @@ function findById(id) {
 
 function findAllTasks(projectId) {
     return db('projects')
-        .select('projects.name', 'resources.description')
-        .join('resources', 'resources.project-id', 'project.id')
+        .select(
+            'projects.projects_name', 
+            'tasks.tasks_notes',
+            'tasks.tasks_description',
+            'tasks.tasks_completed'
+            )
+        .join(
+            'tasks', 
+            'tasks.project_id', 
+            'projects.id'
+            )
         .where('projects.id', projectId);
 }
 
-function findAllResources(projectId) {
+function findAllProjectResources(projectId) {
     return db('projects')
-        .select('projects.name', 'resources.description')
-        .join('resources', 'resources.project-id', 'project.id')
+        .select(
+            'projects.projects_name', 
+            'resources.resources_name',
+            'resources.resources_description'
+            )
+        .join(
+            'resources', 
+            'resources.project_id',
+             'projects.id'
+             )
         .where('projects.id', projectId);
 }
 
