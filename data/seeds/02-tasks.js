@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-  return knex('table_name').insert([
+  return knex('tasks').insert([
       // Inserts seed entries
         { 
           tasks_description: 'Task1', 
