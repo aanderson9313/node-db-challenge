@@ -39,13 +39,13 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
-
+Relational database is a database whereas SQL is a query language. SQL is different from other languages because it cant execute functions, array methods, loops etc. SQL can just query a database to get back data. Relational database data is persistant and cannot be changed unless we specifically ask to do so.
 - [ ] Why do tables need a `primary key`?
-
+Primary key is needed to autoincrement fields in the table. it uniquely identifies certain data points
 - [ ] What is the name given to a table column that references the primary key on another table.
-
+Foreign key
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
-
+need an intermediary table to link them
 ## Minimum Viable Product
 
 Take the steps necessary to complete the project from scratch. Start by initializing your project with a `package.json` and go from there.
